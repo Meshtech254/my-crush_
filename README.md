@@ -20,7 +20,7 @@ Everything lives in one `index.html` file, so it is easy to customize, share, an
 
 ### Download as a ZIP
 
-1. Open the https://github.com/Meshtech254/my-crush_
+1. Open the [https://github.com/Meshtech254/my-crush_]
 2. Select **Code**.
 3. Select **Download ZIP**.
 4. Extract the ZIP somewhere easy to find.
@@ -109,7 +109,7 @@ Improvements and new theme ideas are welcome. Please read [CONTRIBUTING.md](CONT
 
 Created by **Meshtech254**.
 
-- GitHub: https://github.com/Meshtech254/my-crush_
+- GitHub: [https://github.com/Meshtech254/my-crush_]
 
 
 If you remix the template, a small credit is appreciated but not required by the license.
