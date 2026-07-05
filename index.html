@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My crush🤞</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffd6e8, #fff0f6);
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      width: 90%;
+      max-width: 380px;
+      padding: 35px 25px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(255, 79, 154, 0.25);
+      position: relative;
+    }
+
+    .heart {
+      font-size: 45px;
+      animation: beat 1s infinite;
+    }
+
+    h1 {
+      color: #ff4f9a;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #333;
+      margin-top: 25px;
+      font-size: 21px;
+    }
+
+    p {
+      color: #444;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .buttons {
+      margin-top: 25px;
+      height: 80px;
+      position: relative;
+    }
+
+    button {
+      border: none;
+      padding: 13px 28px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    #yesBtn {
+      background: #ff4f9a;
+      color: white;
+      margin-right: 15px;
+    }
+
+    #yesBtn:hover {
+      transform: scale(1.1);
+      background: #ff2f86;
+    }
+
+    #noBtn {
+      background: #eeeeee;
+      color: #333;
+      position: absolute;
+    }
+
+    #smallText {
+      font-size: 14px;
+      color: #999;
+      margin-top: 5px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes beat {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.25);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <div class="heart">❤</div>
+
+    <h1>Hey Crushie</h1>
+
+    <p id="message">
+       Since this is a website, I guess for me it was love at first site😝
+    </p>
+
+    <h2>Wanna hang out with me?</h2>
+
+    <div class="buttons">
+      <button id="yesBtn">Yes 😊</button>
+      <button id="noBtn">No 😭</button>
+    </div>
+
+    <p id="smallText">Kumbuka nakaa poa before you pick No😂</p>
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+    const smallText = document.getElementById("smallText");
+
+    let noCount = 0;
+
+    function moveNoButton() {
+      noCount++;
+
+      const maxX = window.innerWidth - noBtn.offsetWidth - 30;
+      const maxY = window.innerHeight - noBtn.offsetHeight - 30;
+
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+
+      noBtn.style.position = "fixed";
+      noBtn.style.left = randomX + "px";
+      noBtn.style.top = randomY + "px";
+
+      if (noCount === 1) {
+        smallText.textContent = "Mbona uakimbilia No😂";
+      } else if (noCount === 2) {
+        smallText.textContent = "No button is shy, try Yes instead 😂";
+      } else if (noCount === 3) {
+        smallText.textContent = "No pia inaona ni fate, finya yes 😂";
+      } else if (noCount === 4) {
+        smallText.textContent = "achana na no😂";
+      } else {
+        smallText.textContent = "No imejam, just pick yes😁";
+      }
+    }
+
+    noBtn.addEventListener("mouseover", moveNoButton);
+    noBtn.addEventListener("touchstart", moveNoButton);
+
+    yesBtn.addEventListener("click", () => {
+      document.body.innerHTML = `
+        <div style="
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: linear-gradient(135deg, #ffd6e8, #fff0f6);
+          font-family: Arial, sans-serif;
+          text-align: center;
+          padding: 20px;
+        ">
+          <div style="
+            background: white;
+            width: 90%;
+            max-width: 380px;
+            padding: 35px 25px;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(255, 79, 154, 0.25);
+          ">
+            <div style="font-size:45px; animation: beat 1s infinite;">😊💖</div>
+            <h1 style="color:#ff4f9a;">Yay!😊</h1>
+            <p style="font-size:18px; color:#444;">Knew you liked me too!</p>
+            <h2 style="color:#333;">so tunameet lini?</h2>
+          </div>
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>

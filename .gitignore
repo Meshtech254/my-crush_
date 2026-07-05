@@ -1,0 +1,12 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Local secrets and dependencies
+.env
+node_modules/
+
+# Generated output and hosting metadata
+dist/
+.vercel/
+.netlify/
